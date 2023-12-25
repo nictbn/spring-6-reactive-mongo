@@ -6,5 +6,5 @@ import reactor.core.publisher.Mono;
 public interface BeerService {
 
     Mono<BeerDto> getById(BeerDto beerDto);
-    Mono<BeerDto> saveBeer(BeerDto beerDto);
+    Mono<BeerDto> saveBeer(Mono<BeerDto> beerDto);
 }
