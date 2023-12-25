@@ -9,6 +9,7 @@ public interface BeerService {
     Mono<BeerDto> saveBeer(Mono<BeerDto> beerDto);
     Mono<BeerDto> saveBeer(BeerDto beerDto);
     Mono<BeerDto> getById(String beerId);
+    Mono<BeerDto> findFirstByBeerName(String beerName);
     Mono<BeerDto> updateBeer(String beerId, BeerDto beerDto);
     Mono<BeerDto> patchBeer(String beerId, BeerDto beerDto);
     Mono<Void> deleteBeerById(String beerId);
