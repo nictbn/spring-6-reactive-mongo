@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.domain.Persistable;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
@@ -17,7 +18,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Document
-public class Customer {
+public class Customer implements Persistable<String> {
     @Id
     private String id;
 
@@ -29,4 +30,9 @@ public class Customer {
 
     @LastModifiedDate
     private LocalDateTime lastModifiedDate;
+
+    @Override
+    public boolean isNew() {
+        return id == null;
+    }
 }
