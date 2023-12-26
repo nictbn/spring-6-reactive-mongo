@@ -20,6 +20,7 @@ public class BeerRouter {
     public RouterFunction<ServerResponse> beerRoutes() {
         return route()
                 .GET(BEER_PATH, accept(MediaType.APPLICATION_JSON), handler::listBeers)
+                .GET(BEER_PATH_ID, accept(MediaType.APPLICATION_JSON), handler::getBeerById)
                 .build();
     }
 }
