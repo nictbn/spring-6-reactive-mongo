@@ -21,7 +21,7 @@ import static org.awaitility.Awaitility.await;
 
 @SpringBootTest
 @ActiveProfiles("test")
-class BeerServiceImplTest {
+public class BeerServiceImplTest {
     @Autowired
     BeerService beerService;
 
